@@ -4,6 +4,8 @@ WORKDIR /app
 
 ENV PYTHONUNBUFFERED=1
 
+RUN useradd -m -r appuser && chown appuser:appuser /app
+
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
