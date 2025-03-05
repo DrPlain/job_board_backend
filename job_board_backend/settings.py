@@ -143,8 +143,11 @@ SIMPLE_JWT = {
 
 # Database
 DATABASES = {
-    'default': db_url(os.getenv('DATABASE_URL'))
-}
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 # Celery Configuration
 CELERY_BROKER_URL = os.getenv('CELERY_BROKER_URL')
