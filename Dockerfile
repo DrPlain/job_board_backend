@@ -4,7 +4,8 @@ WORKDIR /app
 
 ENV PYTHONUNBUFFERED=1
 
-RUN useradd -m -r appuser && chown appuser:appuser /app
+RUN useradd -ms /bin/bash celery
+RUN chown -R celery:celery /app
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
