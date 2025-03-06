@@ -4,8 +4,11 @@ WORKDIR /app
 
 ENV PYTHONUNBUFFERED=1
 
-RUN useradd -ms /bin/bash celery
-RUN chown -R celery:celery /app
+# Create a new user
+RUN useradd -m celery_user
+
+# Switch to the new user
+USER celery_user
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
