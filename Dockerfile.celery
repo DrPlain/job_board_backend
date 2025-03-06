@@ -1,10 +1,10 @@
 # Use the same base image as your Django app
 FROM python:3.12
 
-ENV PYTHONUNBUFFERED=1
-
 # Set the working directory
 WORKDIR /app
+
+ENV PYTHONUNBUFFERED=1
 
 # Copy project files
 COPY . .
