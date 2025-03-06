@@ -16,7 +16,8 @@ schema_view = get_schema_view(
         contact=openapi.Contact(email="contact@example.com"),
         license=openapi.License(name="MIT License"),
     ),
-    public=True,  # Allow anyone to access the Swagger UI
+    public=True,
+    #url="https://jobboardbackend-production-8f2e.up.railway.app/api/docs/"
     permission_classes=(permissions.AllowAny,),
 )
 
