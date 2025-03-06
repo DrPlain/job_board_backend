@@ -18,7 +18,7 @@ AUTH_USER_MODEL = 'authentication.User'  # Use the custom User model from authen
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['jobboardbackend-production-8f2e.up.railway.app']
 
