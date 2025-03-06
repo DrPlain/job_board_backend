@@ -7,7 +7,7 @@ from django.conf import settings
 def send_verification_email(user_id, token):
     """Send email verification link to the user."""
     user = User.objects.get(id=user_id)
-    verification_url = f"http://localhost:8000/api/auth/verify-email/?token={token}"
+    verification_url = f"https://jobboardbackend-production-8f2e.up.railway.app/api/auth/verify-email/?token={token}"
     subject = "Verify Your Email Address"
     message = f"""
     Dear {user.first_name},
@@ -32,7 +32,7 @@ def send_verification_email(user_id, token):
 def send_password_reset_email(user_id, token):
     """Send password reset email to the user."""
     user = User.objects.get(id=user_id)
-    reset_url = f"http://localhost:8000/api/auth/password-reset/confirm/?token={token}"
+    reset_url = f"https://jobboardbackend-production-8f2e.up.railway.app/api/auth/password-reset/confirm/?token={token}"
     subject = "Reset Your Password"
     message = f"""
     Dear {user.first_name},
