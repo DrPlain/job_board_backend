@@ -61,9 +61,6 @@ CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_METHODS = ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
 CORS_ALLOW_HEADERS = ["*"]
 
-# Redirect all HTTP traffic to HTTPS
-SECURE_SSL_REDIRECT = True
-
 
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
