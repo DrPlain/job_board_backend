@@ -1,0 +1,14 @@
+# Use the same base image as your Django app
+FROM python:3.12
+
+# Set the working directory
+WORKDIR /app
+
+# Copy project files
+COPY . .
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Run migrations before starting Celery
+CMD ["sh", "-c", "python manage.py migrate --noinput && celery -A job_board_backend worker --loglevel=info --uid=1 --concurrency=1"]
