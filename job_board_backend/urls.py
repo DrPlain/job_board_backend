@@ -17,7 +17,6 @@ schema_view = get_schema_view(
         license=openapi.License(name="MIT License"),
     ),
     public=True,
-    url="https://jobboardbackend-production-8f2e.up.railway.app/api",
     permission_classes=(permissions.AllowAny,),
 )
 
